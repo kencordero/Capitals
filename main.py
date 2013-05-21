@@ -1,7 +1,7 @@
 #Main
 
 import capquiz.ui as ui 
-from capquiz.world import Country
+from capquiz.country import Country
 import sqlite3
 
 #connect to databasae

@@ -9,8 +9,7 @@ def displayList(countries):
 	clearScreen()
 	print("\nList of countries")
 	for country in countries:
-		print(country[0], country[1])
-	pause()
+		print("{0}, {1}".format(country[0], country[1]))
 		
 def displayMenu():
 	clearScreen()
