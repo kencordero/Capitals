@@ -3,7 +3,7 @@
 from os import system
 
 def clearScreen():
-	system("cls")
+    system("clear")    
 
 def displayList(countries):
 	clearScreen()
@@ -24,6 +24,3 @@ def inputCountry(country):
 	
 def menuOptionError():
 	print("Select a valid option from the menu!")
-	
-def pause():
-	system("pause")

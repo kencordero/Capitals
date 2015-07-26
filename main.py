@@ -23,8 +23,7 @@ while True:
 		ui.inputCountry(country)
 		cur.execute('INSERT INTO Countries(name, capital) VALUES (?, ?)', (country.name, country.capital))
 	else:
-		ui.menuOptionError()
-	ui.pause()
+		ui.menuOptionError()	
 	
 #User chose quit from menu
 if (con.in_transaction == True):
