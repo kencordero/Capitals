@@ -10,9 +10,9 @@ def get_db_cursor():
 def question():
 	cur.execute('SELECT * FROM countries ORDER BY RANDOM() LIMIT 1;')
 	country = cur.fetchone()		
-	answer = input(country['name'] + ': ')	
-	if (answer == country['capital']):
-		print('Correct!')		
+	answer = input('What is the capital of ' + country['name'] + '? ')
+	if (answer.lower() == country['capital'].lower()):
+		print('Correct!')
 		#TODO Add stats
 	else:
 		print('Wrong! The correct answer was ' + country['capital'])
