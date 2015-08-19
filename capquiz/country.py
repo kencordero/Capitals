@@ -7,4 +7,7 @@ class Country(object):
 		self.capital = ""
 		self.continent = ""
 
-
+class Quiz(object):
+	#class responsible for storing questions and stats
+	pass
+	
