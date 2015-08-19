@@ -12,7 +12,7 @@ def get_random_country():
 	cur.execute('SELECT * FROM countries ORDER BY RANDOM() LIMIT 1;')
 	return cur.fetchone()
 
-def question(question_counter, correct_counter):
+def question():
     country = get_random_country()
     print('{0}/{1}'.format(correct_counter, question_counter))
     answer = raw_input('What is the capital of ' + country['name'] + '? ')
@@ -21,7 +21,7 @@ def question(question_counter, correct_counter):
         print(Fore.GREEN + 'Correct!' + Fore.RESET)
         return True
     else:
-        print(Fore.RED + 'Wrong!' + Fore.RESET + ' The correct answer was ' + country['capital'])
+        print(Fore.RED + 'Wrong!' + Fore.RESET + ' The correct answer was ' + Fore.GREEN + country['capital'] + Fore.RESET)
         return False
 	
 if (__name__ == '__main__'):
@@ -29,6 +29,6 @@ if (__name__ == '__main__'):
     question_counter = 0
     correct_counter = 0
     while True:
-        if question(question_counter, correct_counter):
+        if question():
             correct_counter += 1
         question_counter += 1
