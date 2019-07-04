@@ -7,14 +7,17 @@ def get_db_cursor():
     con = sqlite3.connect(DB_PATH)
     con.row_factory = sqlite3.Row
     return con.cursor()
-class World(object):
-    def get_random_country():
-        cur.execute('SELECT * FROM countries ORDER BY RANDOM() LIMIT 1;')
-        return cur.fetchone()
-    
-    def get_random_countries(n):
-        cur.execute('SELECT * FROM countries ORDER BY RANDOM() LIMIT ' + n + ';')
-        return cur.fetchall()
+
+def get_random_country():
+    cur.execute('SELECT * FROM countries ORDER BY RANDOM() LIMIT 1;')
+    return cur.fetchone()
+
+def get_random_countries(n):
+    cur.execute('SELECT * FROM countries ORDER BY RANDOM() LIMIT ' + n + ';')
+    return cur.fetchall()
+def get_all_countries():
+    cur.execute('SELECT * FROM countries')
+    return cur.fetchall()
 
 def question():
     country = get_random_country()
